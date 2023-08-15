@@ -2,4 +2,7 @@
 #Prints all integers of a list in reverse order.
 
 def print_reversed_list_integer(my_list=[]):
-    print("{}".format(my_list.reverse()))
+     if isinstance(my_list, list):
+         my_list.reverse()
+         for n in my_list:
+             print("{}".format(n))
