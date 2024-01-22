@@ -3,5 +3,8 @@
 
 def no_c(my_string):
     """A function that removes all characters c and C from a string."""
-    new = [x for x in my_string if x != 'c' and x != 'C']
+    new = ""
+    for x in my_string:
+        if x != 'c' and x != 'C']
+        new += x
     return ("".join(new))
