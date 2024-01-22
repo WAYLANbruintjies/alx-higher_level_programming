@@ -3,5 +3,5 @@
 
 def no_c(my_string):
     """A function that removes all characters c and C from a string."""
-    copy = [char for char in my_string if char != 'c' and char != 'C']
+    copy = [x for x in my_string if x != 'c' and x != 'C']
     return ("".join(copy))
