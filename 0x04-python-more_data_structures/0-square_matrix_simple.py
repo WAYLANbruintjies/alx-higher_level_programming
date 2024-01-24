@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+#0-square_matrix_simple.py
 
 def square_matrix_simple(matrix=[]):
-    """0. Squared simple"""
-    copied_matrix = matix.copy()
+    """A function that computes the square value of all integers of a matrix"""
+    new_matrix = matix.copy()
 
      for i in range(len(matrix)):
-        copied_matrix[i] = list(map(lambda x: x**2, matrix[i]))
+        new_matrix[i] = list(map(lambda x: x**2, matrix[i]))
 
-    return (copied_matrix)
+    return (new_matrix)
