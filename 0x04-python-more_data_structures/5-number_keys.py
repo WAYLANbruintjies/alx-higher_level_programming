@@ -5,6 +5,6 @@ def number_keys(a_dictionary):
     nums = 0
 
     for i in key_list:
-        nums += 1  #nums = nums +1
+        nums += 1
 
     return (nums)
