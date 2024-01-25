@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+
 def to_subtract(list_num):
     sub = 0
     max_list = max(list_num)
 
     for n in list_num:
         if max_list > n:
-            sub = sub + n  #sub += n
+            sub = sub + n
 
     return (max_list - sub)
 
