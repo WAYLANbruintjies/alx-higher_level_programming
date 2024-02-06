@@ -7,8 +7,7 @@ def safe_function(fct, *args):
     """Executes a function safely
     NOTE:
         fct: Function to execute
-        args: Arguments for fct
-    """
+        args: Arguments for fct"""
 
     try:
         outcome = fct(*args)
