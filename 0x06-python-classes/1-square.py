@@ -3,10 +3,12 @@
 
 
 class Square:
-    """Represent a square"""
+    """Representation a square"""
 
     def __init__(self, size):
-        """Initialise a new Square"""
+        """Initialise a new Square with a private instance attibute
+        Args:
+            size of type int: The size of the new square.
+            """
 
         self.__size = size
-
