@@ -2,4 +2,4 @@
 
 """An empty class Rectangle"""
 class Rectangle():
-    pass
+    return Rectangle
