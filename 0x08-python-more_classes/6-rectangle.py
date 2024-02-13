@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-2. Area and Perimeter
+6. How many instances
 """
 
 
