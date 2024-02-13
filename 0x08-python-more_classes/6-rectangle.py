@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-6. How many instances
+2. Area and Perimeter
 """
 
 
@@ -11,11 +11,11 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """
-        Initializes Rectangle class instance within constructor
+        Initializes a Rectangle
         """
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
+        number_of_instances += 1
 
     @property
     def width(self):
@@ -24,9 +24,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """
-        Sets the width of a Rectangle > 0
-        """
+        """Sets the width of a Rectangle"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -35,16 +33,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        Retrieves the height of a Rectangle
-        """
+        """Retrieves the height of a Rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        Sets the height of a Rectangle > 0
-        """
+        """Sets the height of a Rectangle"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -69,24 +63,25 @@ class Rectangle:
         Return internal string representation of Rectangle
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
-    
+
     def area(self):
         """
-        Calculates the area of a Rectangle- height * width
+        Calculates the area of a Rectangle
+            Area = height * width
         """
         return self.__width * self.__height
 
     def perimeter(self):
-        """
-        Compute the perimeter of a Rectangle- 2 * (height + width)
+        """Calculates the perimeter of a Rectangle
+            Perimeter = 2 * (height + width)
         """
         if self.__height == 0 or self.__width == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __del__(self):
-        """ 
+        """
         Deletes a Rectangle
         """
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
+        number_of_instances -= 1
