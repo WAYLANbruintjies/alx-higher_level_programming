@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-4. Eval is magic
+4. Eval is magic.
 """
 
 
