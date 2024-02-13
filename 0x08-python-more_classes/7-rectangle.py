@@ -58,12 +58,12 @@ class Rectangle:
         """
         if self.__height == 0 or self.__width == 0:
             return ''
-        new_str = ''
+        alt_str = ''
         for i in range(self.__height):
             for j in range(self.__width):
-                new_str += '#'
-            new_str += '\n'
-        return new_str[:-1]
+                alt_str += str(self.print_symbol)
+            alt_str += '\n'
+        return alt_str[:-1]
 
     def __repr__(self):
         """
