@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-6. How many instances
+7. Change representation
 """
 
 
