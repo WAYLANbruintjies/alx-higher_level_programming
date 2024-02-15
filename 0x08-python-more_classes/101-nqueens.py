@@ -32,40 +32,39 @@ def get_solution(board):
 
 def xout(board, row, col):
     """X spots on the chessboard"""
-    # X-out all front spots
     for c in range(col + 1, len(board)):
         board[row][c] = "x"
-    # X-out all rear spots
+    """X-out all rear spots"""
     for c in range(col - 1, -1, -1):
         board[row][c] = "x"
-    # X-out all spots below
+    """X-out all spots below"""
     for r in range(row + 1, len(board)):
         board[r][col] = "x"
-    # X-out all spots above
+    """X-out all spots above"""
     for r in range(row - 1, -1, -1):
         board[r][col] = "x"
-    # X-out all spots diagonally down the right
+    """X-out all spots diagonally down the right"""
     c = col + 1
     for r in range(row + 1, len(board)):
         if c >= len(board):
             break
         board[r][c] = "x"
         c += 1
-    # X-out all spots diagonally up the left
+    """X-out all spots diagonally up the left"""
     c = col - 1
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
         board[r][c]
         c -= 1
-    # X-out all spots diagonally up the right
+    """X-out all spots diagonally up the right"""
     c = col + 1
     for r in range(row - 1, -1, -1):
         if c >= len(board):
             break
         board[r][c] = "x"
         c += 1
-    # X-out all spots diagonally down the left
+    """X-out all spots diagonally down the left"""
     c = col - 1
     for r in range(row + 1, len(board)):
         if c < 0:
