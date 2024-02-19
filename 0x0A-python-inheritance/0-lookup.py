@@ -1,7 +1,7 @@
-#!/usr/bin/python3 
-"""0. Lookup, File: 0-lookup.py"""
+#!/usr/bin/python3
+"""Defines available attributes & methods of an object"""
 
 
 def lookup(obj):
-    """Returns a list of available methods & attributes"""
+    """Return a list of available methods &  attributes"""
     return (dir(obj))
