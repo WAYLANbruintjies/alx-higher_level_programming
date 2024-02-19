@@ -2,6 +2,7 @@
 
 """0. Lookup, File: 0-lookup.py"""
 
+
 def lookup(obj):
     """
     Returns the list of available attributes
