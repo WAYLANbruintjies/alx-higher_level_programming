@@ -3,7 +3,6 @@
 
 const lines = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-while (lines) {
-  console.log(`${lines[0]}\n${lines[1]}\n${lines[2]}`);
-  break;
+for (let n = 0; n < lines.length; n++) {
+  console.log(lines[n]);
 }
