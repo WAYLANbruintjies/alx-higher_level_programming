@@ -11,6 +11,6 @@ class Square extends otherSquare {
       console.log(c.repeat(this.height));
     }
   }
-};
+}
 
 module.exports = Square;
