@@ -3,9 +3,9 @@
 import MySQLdb
 import sys
 
-def list_of_states(username, password, database):
+if __name__ == "__main__":
     # MySQL server connection
-    db = MySQLdb.connect(host='localhost', port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cursor = db.cursor()
 
     # Execute a MySQL query to fetch the states
@@ -20,10 +20,3 @@ def list_of_states(username, password, database):
 
     # Close database connection
     db.close()
-
-if __name__ == '__main__':
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    list_of_states(username, password, database)
