@@ -18,6 +18,6 @@ if __name__ == "__main__":
     for row in rows:
         print(row)
 
-    # Close connections
+    # Close all onnections
     cursor.close()
     db.close()
