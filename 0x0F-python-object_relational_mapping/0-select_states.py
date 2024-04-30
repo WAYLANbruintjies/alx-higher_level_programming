@@ -12,7 +12,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    # MySQL Server connection
+    """ MySQL Server connection"""
     try:
         conn = MySQLdb.connect(
             host="localhost",
@@ -33,6 +33,6 @@ if __name__ == "__main__":
     for row in rows:
         print(row)
 
-    # Close all connections
+    """Close all connections"""
     cursor.close()
     conn.close()
