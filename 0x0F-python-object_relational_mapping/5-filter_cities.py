@@ -1,24 +1,33 @@
 #!/usr/bin/python3
-"""Modules to import"""
+"""
+This script  takes in the name of a state as an argument and lists all cities of that
+state, using the database `hbtn_0e_4_usa`
+"""
 import MySQLdb
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
-    
-    """MySQL server + db connection setup initialization"""
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
-    cursor = db.cursor()
+    """
+    Access to the database to get the cities
+    """
 
-    """Execute MySQL queries and display results"""
-    cursor.execute("SELECT cities.name FROM cities INNER JOIN states ON states.id=cities.state_id \
-            WHERE states.name=%s", (sys.argv[4]))
+    db = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3],
+            charset="utf8"
+        )
 
-    rows = cursor.fetchall()
-    temp = list(row[0] for row in rows)
-        print(*temp, sep=", ")
+    with db.cursor() as cursor:
+        cursor.execute("SELECT cities.id, cities.name FROM cities JOIN states \
+                ON cities.state_id = states.id WHERE states.name LIKE BINARY \
+                %(state_name)s ORDER BY cities.id ASC", {'state_name': argv[4]})
 
-    """Close off all connection"""
-    cursor.close()
-    db.close()
+    rows_selected = db_cursor.fetchall()
+
+    if rows_selected is not None:
+        print(", ".join([row[1] for row in rows_selected]))
