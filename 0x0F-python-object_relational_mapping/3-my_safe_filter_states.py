@@ -17,8 +17,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     """Execute SQL query and print reslut"""
-    search = sys.argv[4]
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY {} ORDER BY state.id ASC".format(search))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY \
+            %(name)s ORDER BY state.id ASC", ('name': sys.argv[4]))
 
     rows = cursor.fetchall()
     for row in rows:
