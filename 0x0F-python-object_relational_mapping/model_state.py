@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-"""Modules to import"""
-from sqlalchemy import Column, Integer, String, MetaData
+"""
+A script that defines a State class and a Base class to work with MySQLAlchemy ORM
+"""
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-import sys
 
-mymetadata = MetaData()
-Base = declarative_base(metadata=mymetadata)
+
+Base = declarative_base()
 
 class State(Base):
-    # Class creation that inherits from Base
+    """Class creation that inherits from Base"""
     __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True, unique=True, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
