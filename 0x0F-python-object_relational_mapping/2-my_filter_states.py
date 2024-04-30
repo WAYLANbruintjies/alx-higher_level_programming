@@ -1,35 +1,33 @@
 #!/usr/bin/python3
 """
-Modules to import to list all states from hbtn_0e_0_usa database
-that takes in an argument where name matches the argument
+This script takes in an argument and displays all values in states table
+where `name` matches the argument from the database `hbtn_0e_0_usa`
 """
+
 import MySQLdb
-import sys
+from sys import argv
 
-
-if __name__ == "__main__":
-
-    # Connect to MySQL server, get login credentials from cmd arguments
-    db = MySQL.connect(
-            host='localhost',
+if __name__ == '__main__':
+    """
+    Access to the database and get the states
+    from the database
+    """
+    db = MySQLdb.connect(
+            host="localhost",
             port=3306,
-            user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            charset='utf8'
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3]
         )
 
     cursor = db.cursor()
 
-    # SQL query to retrieve all states, with format filter and ordered by id
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \ 
-            states.id ASC".format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
+            states.id ASC".format(argv[4]))
     rows = cursor.fetchall()
 
-    # Print the result of the above query
     for row in rows:
         print(row)
 
-    # Close all connection
     cursor.close()
     db.close()
