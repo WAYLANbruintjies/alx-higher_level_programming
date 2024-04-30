@@ -22,11 +22,11 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # SQL query to retrieve all states, with format filter and ordered by id
-    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY states.id ASC" \
-            .format(sys.argv[4]))
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \ 
+            states.id ASC".format(sys.argv[4]))
     rows = cursor.fetchall()
 
-    # Return/print the results of the above query
+    # Print the result of the above query
     for row in rows:
         print(row)
 
