@@ -1,7 +1,7 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """
-Modules to import in order to list all states from the database hbtn_0e_0_usa
-sorted by state.id in ascending order
+List all the states from database hbtn_0e_0_usa
+sorted in ascending order by id
 """
 import MySQLdb
 import sys
@@ -12,33 +12,27 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
+    # MySQL Server connection
     try:
-        # MySQL server connection
-        db = MySQLdb.connect(
-                host="localhost",
-                port=3306,
-                user=username,
-                passwd=password,
-                db=database
-                charset="utf8")
-
+        conn = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=username,
+            passwd=password,
+            db=database,
+            charset="utf8"
+        )
     except MySQLdb.Error as e:
         print("Error connecting to database: {}".format(e))
         sys.exit(1)
 
-        # Cursor instantiation
-        cursor = db.cursor()
+    cursor= conn.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cursor.fetchall()
 
-        # Execute a MySQL query to fetch all states
-        cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    for row in rows:
+        print(row)
 
-        # Get all the rows from the query result
-        rows = cursor.fetchall()
-
-        # Print results
-        for row in rows:
-            print(row)
-
-        # Close all onnections
-        cursor.close()
-        db.close()
+    # Close all connections
+    cursor.close()
+    conn.close()
