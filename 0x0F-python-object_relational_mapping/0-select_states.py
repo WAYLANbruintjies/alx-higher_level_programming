@@ -1,7 +1,9 @@
 #!/usr/bin/pyhton3
 """Modules to import"""
+
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     # MySQL server connection

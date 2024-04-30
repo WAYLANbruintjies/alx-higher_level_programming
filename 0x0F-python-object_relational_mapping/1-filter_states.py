@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """Modules to import to list all states from hbtn_0e_0_usa database"""
+
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     # Connect to MySQL server, get login credentials from cmd arguments
@@ -17,4 +19,5 @@ if __name__ == "__main__":
         print(row)
 
     # Close database connection
+    cursor.close()
     db.close()
