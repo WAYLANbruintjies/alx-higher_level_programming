@@ -14,6 +14,7 @@ if __name__ == "__main__":
 
     # Get all the rows from the query result
     rows = cursor.fetchall()
+    db.commit()
 
     # Print results
     for row in rows:
