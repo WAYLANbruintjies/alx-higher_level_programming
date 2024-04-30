@@ -15,12 +15,12 @@ if __name__ == "__main__":
     try:
         # MySQL server connection
         db = MySQLdb.connect(
-                host='localhost',
+                host="localhost",
                 port=3306,
                 user=username,
                 passwd=password,
                 db=database
-                charset='utf8')
+                charset="utf8")
 
     except MySQLdb.Error as e:
         print("Error connecting to database: {}".format(e))
