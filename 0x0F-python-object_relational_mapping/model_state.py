@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """Modules to import"""
-import SQLAlchemy
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 import sys
 
-Base = declarative_base()
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
 class State(Base):
     # Class creation that inherits from Base
