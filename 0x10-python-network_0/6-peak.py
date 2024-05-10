@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Algorithm Technical interview prep - find the peak in an unsorted integer list.
+Algorithm question, Technical interview prep - find the peak in an unsorted integer list.
 Prototype: def find_peak(list_of_integers):
 """
 
